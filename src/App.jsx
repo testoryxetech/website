@@ -11,6 +11,66 @@ const homePage = pageBySlug.get("home") || pages[0];
 const servicePages = pages.filter((page) =>
   !["home", "about-us", "contact-us", "career", "logistic-security"].includes(page.slug));
 const LOGO = "/wp-content/uploads/2025/11/Untitled-design-13-1.png";
+export const CONTACT = {
+  phone: "+91 75969 58381",
+  phoneHref: "tel:+917596958381",
+  email: "testoryxetech@gmail.com",
+  whatsapp: "https://wa.me/917596958381?text=" +
+    encodeURIComponent("Hello Testoryx Etech, I would like to know more about your testing services."),
+};
+
+function WhatsAppButton() {
+  return (
+    <a
+      className="whatsapp-float"
+      href={CONTACT.whatsapp}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Chat with us on WhatsApp"
+    >
+      <svg viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.7c-2 0-4-.6-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.7 10.7 0 1 1 16 26.7zm5.9-8c-.3-.2-1.9-1-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.8 8.8 0 0 1-4.4-3.8c-.3-.6.3-.5 1-1.8.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4s-1.2 1.1-1.2 2.8 1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.8 5 2.1.9 3 1 4 .8.7-.1 1.9-.8 2.2-1.5.3-.7.3-1.3.2-1.5l-.6-.3z" />
+      </svg>
+      <span className="whatsapp-label">Chat with us</span>
+    </a>
+  );
+}
+
+function PhoneIcon() {
+  return (
+    <svg className="contact-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z" />
+    </svg>
+  );
+}
+
+function MailIcon() {
+  return (
+    <svg className="contact-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zM22 6l-10 7L2 6" />
+    </svg>
+  );
+}
+
+export function ContactLinks({ className = "" }) {
+  return (
+    <span className={`contact-links ${className}`}>
+      <a href={CONTACT.phoneHref}><PhoneIcon />{CONTACT.phone}</a>
+      <a href={`mailto:${CONTACT.email}`}><MailIcon />{CONTACT.email}</a>
+    </span>
+  );
+}
+
+function TopBar() {
+  return (
+    <div className="top-bar">
+      <div className="top-bar-inner">
+        <span className="top-bar-note">Device testing &amp; certification experts</span>
+        <ContactLinks />
+      </div>
+    </div>
+  );
+}
 const USEFUL_LINKS = ["home", "about-us", "career", "contact-us", "automotive-testing", "gcf-certification",
   "camera-testing", "gps-tracker-testing"];
 
@@ -237,6 +297,7 @@ function Footer() {
             We are a team of skilled Engineers and Business Strategists coming from diverse cultures
             and having unique perspectives.
           </p>
+          <ContactLinks className="footer-contact" />
         </div>
         <div className="footer-col">
           <h3>Useful Links</h3>
@@ -348,6 +409,8 @@ export default function App() {
     <>
       <a className="skip-link" href="#main-content">Skip to content</a>
       <ScrollChrome />
+      <WhatsAppButton />
+      <TopBar />
       <Header />
       {!isHome && <PageBanner key={page.slug} title={title} image={bannerImage} />}
       <div id="main-content">
