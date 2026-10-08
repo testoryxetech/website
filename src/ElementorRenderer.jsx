@@ -56,32 +56,76 @@ function RichText({ value, className, style }) {
   ) : null;
 }
 
-function InquiryForm({ career = false }) {
-  const [message, setMessage] = React.useState("");
+// Submissions are emailed to the company inbox through FormSubmit
+// (formsubmit.co). The very first submission triggers a one-time activation
+// email to this address that must be confirmed before messages are delivered.
+const FORM_ENDPOINT = "https://formsubmit.co/ajax/testoryxetech@gmail.com";
 
-  function handleSubmit(event) {
+function InquiryForm({ career = false }) {
+  const [status, setStatus] = React.useState({ state: "idle", message: "" });
+  const prefix = career ? "career" : "contact";
+
+  async function handleSubmit(event) {
     event.preventDefault();
     const form = event.currentTarget;
     if (!form.reportValidity()) return;
-    setMessage("Form validated locally only. Nothing was sent or saved.");
-    form.reset();
+
+    const data = Object.fromEntries(new FormData(form));
+    if (data._honey) return; // spam bots fill the hidden field
+
+    setStatus({ state: "sending", message: "Sending your message…" });
+    try {
+      const response = await fetch(FORM_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          ...data,
+          _subject: career
+            ? `New career application from ${data.name}`
+            : `New website enquiry from ${data.name}`,
+          _replyto: data.email,
+          _template: "table",
+          _captcha: "false",
+          "Form": career ? "Career page" : "Contact page",
+        }),
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok || String(result.success) === "false") {
+        throw new Error(result.message || `Request failed (${response.status})`);
+      }
+      form.reset();
+      setStatus({
+        state: "success",
+        message: career
+          ? "Thank you! Your application has been sent. We will get back to you soon."
+          : "Thank you! Your message has been sent. Our team will contact you shortly.",
+      });
+    } catch {
+      setStatus({
+        state: "error",
+        message: "Sorry, your message could not be sent. Please email testoryxetech@gmail.com or call +91 75969 58381.",
+      });
+    }
   }
+
+  const sending = status.state === "sending";
 
   return (
     <form className="inquiry-form" onSubmit={handleSubmit}>
+      <input type="text" name="_honey" className="visually-hidden" tabIndex={-1} autoComplete="off" aria-hidden="true" />
       <div className="form-field">
-        <label htmlFor={career ? "career-name" : "contact-name"}>Your name</label>
-        <input id={career ? "career-name" : "contact-name"} name="name" autoComplete="name" required />
+        <label htmlFor={`${prefix}-name`}>Your name</label>
+        <input id={`${prefix}-name`} name="name" autoComplete="name" required />
       </div>
-      <div className="form-field">
-        <label htmlFor={career ? "career-email" : "contact-email"}>Email address</label>
-        <input
-          id={career ? "career-email" : "contact-email"}
-          name="email"
-          type="email"
-          autoComplete="email"
-          required
-        />
+      <div className="form-row">
+        <div className="form-field">
+          <label htmlFor={`${prefix}-email`}>Email address</label>
+          <input id={`${prefix}-email`} name="email" type="email" autoComplete="email" required />
+        </div>
+        <div className="form-field">
+          <label htmlFor={`${prefix}-phone`}>Phone <span className="optional">(optional)</span></label>
+          <input id={`${prefix}-phone`} name="phone" type="tel" autoComplete="tel" />
+        </div>
       </div>
       {career && (
         <div className="form-field">
@@ -90,24 +134,22 @@ function InquiryForm({ career = false }) {
         </div>
       )}
       <div className="form-field">
-        <label htmlFor={career ? "career-message" : "contact-message"}>
+        <label htmlFor={`${prefix}-message`}>
           {career ? "Tell us about yourself" : "How can we help?"}
         </label>
-        <textarea
-          id={career ? "career-message" : "contact-message"}
-          name="message"
-          rows="5"
-          required
-        />
+        <textarea id={`${prefix}-message`} name="message" rows="5" required />
       </div>
-      <button className="site-button" type="submit">Validate form</button>
-      <p className="form-note" aria-live="polite">{message}</p>
+      <button className="site-button" type="submit" disabled={sending}>
+        {sending ? "Sending…" : career ? "Send application" : "Send message"}
+        {!sending && <span aria-hidden="true">→</span>}
+      </button>
+      <p className={`form-note is-${status.state}`} role="status" aria-live="polite">{status.message}</p>
     </form>
   );
 }
 
 const HERO_STATS = [
-  { value: "14+", label: "Years in chipset testing" },
+  { value: "2+", label: "Years in chipset testing" },
   { value: "50+", label: "Countries served" },
   { value: "3", label: "Chipset tiers covered" },
 ];
@@ -156,7 +198,7 @@ function SiteHero() {
       <div className="site-hero-copy">
         <span className="hero-eyebrow"><i aria-hidden="true" />Welcome to Testoryx Etech</span>
         <h1>
-          <span className="hero-line">14 years of experience</span>
+          <span className="hero-line">2 years of experience</span>
           <span className="hero-line">in <em>chipset testing</em></span>
         </h1>
         <p>

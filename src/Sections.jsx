@@ -27,7 +27,7 @@ function Icon({ name }) {
 }
 
 const CREDENTIALS = [
-  { icon: "chip", value: "14+ years", label: "Chipset testing experience" },
+  { icon: "chip", value: "2+ years", label: "Chipset testing experience" },
   { icon: "users", value: "27+ OEMs/ODMs", label: "In our customer portfolio" },
   { icon: "signal", value: "5G NSA & SA", label: "First-hand test plan expertise" },
   { icon: "globe", value: "Global teams", label: "Engineers across the world" },
@@ -91,7 +91,7 @@ export function TechnologiesWeTest() {
 const REASONS = [
   {
     icon: "chip",
-    title: "14 years in chipset testing",
+    title: "2 years in chipset testing",
     text: "Quality outcomes for flagship, mid-level and entry-level chipsets, backed by outstanding customer reviews.",
   },
   {

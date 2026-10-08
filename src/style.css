@@ -3927,3 +3927,44 @@ h1, h2, h3, h4, h5, h6 {
     display: none;
   }
 }
+
+/* Inquiry form: two-column row and send states. */
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.form-field .optional {
+  color: var(--c-muted);
+  font-weight: 400;
+}
+
+.inquiry-form .site-button:disabled {
+  cursor: progress;
+  opacity: .7;
+  transform: none;
+}
+
+.form-note.is-success,
+.form-note.is-error {
+  padding: 12px 14px;
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+.form-note.is-success {
+  background: var(--c-primary-soft);
+  color: var(--c-primary-600);
+}
+
+.form-note.is-error {
+  background: #fdecee;
+  color: #b4233f;
+}
+
+@media (max-width: 600px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
