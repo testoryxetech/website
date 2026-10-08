@@ -633,6 +633,8 @@ function ElementorNode({ node, pageSlug, depth = 0 }) {
   if (node.elType === "container") {
     const isFull = settings.content_width === "full";
     const layout = settings.container_type === "grid" ? "e-grid" : "e-flex";
+    // Elementor containers default to a column layout unless set to row.
+    const direction = (settings.flex_direction || "column").startsWith("row") ? "" : " e-col";
     const hasImage = Boolean(settings.background_image?.url);
     const hasBand = settings.background_background === "gradient" ||
       (settings.background_background === "classic" && isDarkColor(settings.background_color));
@@ -641,7 +643,7 @@ function ElementorNode({ node, pageSlug, depth = 0 }) {
     const children = (node.elements || []).map((child) => <ElementorNode key={child.id} node={child} pageSlug={pageSlug} depth={depth + 1} />);
     return (
       <div
-        className={`${idClass} e-con ${layout} ${isFull ? "e-con-full" : "e-con-boxed"}${hasBand ? " has-band" : ""}${isSurface ? " is-surface" : ""}${hasImage ? " has-bg-image" : ""}`}
+        className={`${idClass} e-con ${layout}${direction} ${isFull ? "e-con-full" : "e-con-boxed"}${hasBand ? " has-band" : ""}${isSurface ? " is-surface" : ""}${hasImage ? " has-bg-image" : ""}`}
         data-id={node.id}
         data-element_type="container"
       >
