@@ -56,10 +56,12 @@ function RichText({ value, className, style }) {
   ) : null;
 }
 
-// Submissions are emailed to the company inbox through FormSubmit
-// (formsubmit.co). The very first submission triggers a one-time activation
-// email to this address that must be confirmed before messages are delivered.
-const FORM_ENDPOINT = "https://formsubmit.co/ajax/testoryxetech@gmail.com";
+// Submissions are emailed to testoryxetech@gmail.com through Web3Forms.
+// The access key comes from https://web3forms.com (free, tied to that inbox)
+// and is safe to ship in client code. Set VITE_WEB3FORMS_KEY in .env, or
+// paste the key in place of the placeholder below.
+const FORM_ENDPOINT = "https://api.web3forms.com/submit";
+const WEB3FORMS_KEY = import.meta.env.VITE_WEB3FORMS_KEY || "YOUR_WEB3FORMS_ACCESS_KEY";
 
 function InquiryForm({ career = false }) {
   const [status, setStatus] = React.useState({ state: "idle", message: "" });
@@ -70,8 +72,8 @@ function InquiryForm({ career = false }) {
     const form = event.currentTarget;
     if (!form.reportValidity()) return;
 
-    const data = Object.fromEntries(new FormData(form));
-    if (data._honey) return; // spam bots fill the hidden field
+    const { botcheck, ...data } = Object.fromEntries(new FormData(form));
+    if (botcheck) return; // spam bots fill the hidden field
 
     setStatus({ state: "sending", message: "Sending your message…" });
     try {
@@ -79,18 +81,18 @@ function InquiryForm({ career = false }) {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
-          ...data,
-          _subject: career
+          access_key: WEB3FORMS_KEY,
+          subject: career
             ? `New career application from ${data.name}`
             : `New website enquiry from ${data.name}`,
-          _replyto: data.email,
-          _template: "table",
-          _captcha: "false",
-          "Form": career ? "Career page" : "Contact page",
+          from_name: "Testoryx Etech Website",
+          replyto: data.email,
+          form: career ? "Career page" : "Contact page",
+          ...data,
         }),
       });
       const result = await response.json().catch(() => ({}));
-      if (!response.ok || String(result.success) === "false") {
+      if (!response.ok || !result.success) {
         throw new Error(result.message || `Request failed (${response.status})`);
       }
       form.reset();
@@ -112,7 +114,7 @@ function InquiryForm({ career = false }) {
 
   return (
     <form className="inquiry-form" onSubmit={handleSubmit}>
-      <input type="text" name="_honey" className="visually-hidden" tabIndex={-1} autoComplete="off" aria-hidden="true" />
+      <input type="checkbox" name="botcheck" className="visually-hidden" tabIndex={-1} autoComplete="off" aria-hidden="true" />
       <div className="form-field">
         <label htmlFor={`${prefix}-name`}>Your name</label>
         <input id={`${prefix}-name`} name="name" autoComplete="name" required />
