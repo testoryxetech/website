@@ -1,0 +1,164 @@
+[
+  {
+    "id": "52",
+    "title": "Home",
+    "slug": "home",
+    "menuOrder": 0
+  },
+  {
+    "id": "384",
+    "title": "IoT Testing",
+    "slug": "iot-testing",
+    "menuOrder": 0
+  },
+  {
+    "id": "414",
+    "title": "Mobile-Device Testing",
+    "slug": "mobile-device-testing",
+    "menuOrder": 0
+  },
+  {
+    "id": "416",
+    "title": "Field Trials",
+    "slug": "field-trials",
+    "menuOrder": 0
+  },
+  {
+    "id": "418",
+    "title": "End User Testing (EUT)",
+    "slug": "end-user-testing-eut",
+    "menuOrder": 0
+  },
+  {
+    "id": "420",
+    "title": "CPE Test",
+    "slug": "cpe-test",
+    "menuOrder": 0
+  },
+  {
+    "id": "422",
+    "title": "Consultancy Services",
+    "slug": "consultancy-services",
+    "menuOrder": 0
+  },
+  {
+    "id": "424",
+    "title": "5G Testing",
+    "slug": "5g-testing",
+    "menuOrder": 0
+  },
+  {
+    "id": "426",
+    "title": "Lab Testing",
+    "slug": "lab-testing",
+    "menuOrder": 0
+  },
+  {
+    "id": "428",
+    "title": "Drive Test",
+    "slug": "drive-test",
+    "menuOrder": 0
+  },
+  {
+    "id": "430",
+    "title": "GPS Tracker Testing",
+    "slug": "gps-tracker-testing",
+    "menuOrder": 0
+  },
+  {
+    "id": "432",
+    "title": "Tablet Testing",
+    "slug": "tablet-testing",
+    "menuOrder": 0
+  },
+  {
+    "id": "434",
+    "title": "TWS Earbuds and Neckband Testing",
+    "slug": "tws-earbuds-and-neckband-testing",
+    "menuOrder": 0
+  },
+  {
+    "id": "436",
+    "title": "Automotive Testing",
+    "slug": "automotive-testing",
+    "menuOrder": 0
+  },
+  {
+    "id": "438",
+    "title": "GCF Certification",
+    "slug": "gcf-certification",
+    "menuOrder": 0
+  },
+  {
+    "id": "440",
+    "title": "Automation Testing",
+    "slug": "automation-testing",
+    "menuOrder": 0
+  },
+  {
+    "id": "442",
+    "title": "Camera Testing",
+    "slug": "camera-testing",
+    "menuOrder": 0
+  },
+  {
+    "id": "444",
+    "title": "Consumer Appliances Testing",
+    "slug": "consumer-appliances-testing",
+    "menuOrder": 0
+  },
+  {
+    "id": "446",
+    "title": "Smart Watch / Wearables",
+    "slug": "smart-watch-wearables",
+    "menuOrder": 0
+  },
+  {
+    "id": "448",
+    "title": "GMS Certification",
+    "slug": "gms-certification",
+    "menuOrder": 0
+  },
+  {
+    "id": "450",
+    "title": "Carrier Acceptance Test",
+    "slug": "carrier-acceptance-test",
+    "menuOrder": 0
+  },
+  {
+    "id": "452",
+    "title": "Voice Assistant Device Testing (Alexa &amp; Google)",
+    "slug": "voice-assistant-device-testing-alexa-google",
+    "menuOrder": 0
+  },
+  {
+    "id": "454",
+    "title": "Temporary Staffing",
+    "slug": "temporary-staffing",
+    "menuOrder": 0
+  },
+  {
+    "id": "761",
+    "title": "About Us",
+    "slug": "about-us",
+    "menuOrder": 0
+  },
+  {
+    "id": "787",
+    "title": "Contact Us",
+    "slug": "contact-us",
+    "menuOrder": 0
+  },
+  {
+    "id": "890",
+    "title": "Career",
+    "slug": "career",
+    "menuOrder": 0
+  },
+  {
+    "id": "925",
+    "title": "Logistic &amp; Security",
+    "slug": "logistic-security",
+    "menuOrder": 0
+  }
+]

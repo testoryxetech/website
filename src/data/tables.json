@@ -1,0 +1,344 @@
+{
+  "1": {
+    "postId": "396",
+    "title": "Testing Categories",
+    "data": [
+      [
+        "Category",
+        "Description"
+      ],
+      [
+        "Components Validation",
+        "Ensuring all hardware components meet design and performance standards."
+      ],
+      [
+        "Function Validation",
+        "Validating device functionalities to ensure intended behavior."
+      ],
+      [
+        "Performance Validation",
+        "Assessing speed, efficiency, and responsiveness under load."
+      ],
+      [
+        "Security & Data Validation",
+        "Ensuring data protection, encryption, and secure communication."
+      ],
+      [
+        "Gateway Validation",
+        "Testing IoT gateways for seamless data routing and device control."
+      ],
+      [
+        "Communication Validation",
+        "Validating connectivity protocols and signal strength across devices."
+      ],
+      [
+        "Application Test",
+        "Ensuring applications controlling IoT devices function as expected."
+      ],
+      [
+        "Protocol Test",
+        "Testing communication protocols for compatibility and stability."
+      ],
+      [
+        "Feature Test",
+        "Verifying all advertised features work under various conditions."
+      ],
+      [
+        "Regression Test",
+        "Ensuring updates do not break existing functionalities."
+      ]
+    ]
+  },
+  "2": {
+    "postId": "523",
+    "title": "GCF Certification",
+    "data": [
+      [
+        "Test Technology",
+        "Test Method(s)",
+        "Technology Area",
+        "Features Covered"
+      ],
+      [
+        "Signaling Conformance",
+        "3GPP TS 51.010-1\t",
+        "GERAN",
+        "GPRS transmitter tests\nEGPRS transmitter tests\nReference sensitivity\nDARP Phase 1 Speech bearer tests"
+      ],
+      [
+        "",
+        "3GPP TS 34.123-1",
+        "UMTS",
+        "Idle mode operations\nLayer 2 related Scenarios\nRLC testing\nElementary procedures of mobility management\nCircuit Switched Call Control (CC)"
+      ],
+      [
+        "",
+        "3GPP TS 36.523-1",
+        "E-UTRA/NB-IoT/CatM1",
+        "E-UTRA/NB-IoT/CatM1 Idle mode operations\nInter-RAT Logged Handover Failure\nEMM specific procedures\nDedicated EPS bearer context activation\nUE requested bearer resource allocation"
+      ],
+      [
+        "",
+        "3GPP TS 34.229-1",
+        "E-UTRA",
+        "IMS Registration and Deregistration\nError Handling and Invalid Behaviour\nIMS Re-authentication\nIMS Voice and Video Calls (MTSI, EVS, AMR/AMR-WB)\nIdentification and Presentation Services\nCommunication Forwarding\nCall Hold and Call Waiting\nCommunication Barring\nMessaging (SMS over IMS)\nMWI (Message Waiting Indicator) Subscription\nConference Call Handling"
+      ],
+      [
+        "",
+        "3GPP TS 34.229-5",
+        "5G NR",
+        "Registration related scenarios call control, voice call Supplementary Services SMS Emergency Call"
+      ],
+      [
+        "",
+        "3GPP TS 38.523-1",
+        "5G NR/Red Cap",
+        "Idle mode and RRC Inactive state operations\nMAC, RLC, PDCP, SDAP\nRRC Connection Establishment, Release, Resume, Reconfiguration, Handover, UE Capability\nCarrier Aggregation\n5GS mobility management (authentication, Security mode control, Registration, De-registration, Service request, SMS over NAS)\nEN-DC & 5GS session management Multi-layer and Services 5GS / EPS Fallback, Unified Access Control (UAC), Emergency Services, eCallover IMS"
+      ],
+      [
+        "RF Conformance",
+        "3GPP TS 51.010-1",
+        "GERAN",
+        "Generic call set up procedures\nGPRS transmitter tests\nEGPRS transmitter tests\nReference sensitivity\nDARP Phase 1 Speech bearer tests"
+      ],
+      [
+        "",
+        "3GPP TS 34.121-1",
+        "UMTS",
+        "Detection in Inter-Cell Handover Conditions\nDetection of E-DCH Relative Grant Channel (E-RGCH) Scenarios\nAdjacent Channel Leakage Power Ratio (ACLR) Scenarios\nReceiver Characteristics Scenarios"
+      ],
+      [
+        "",
+        "3GPP TS 36.521-4",
+        "E-UTRA/NB-IoT\t",
+        "Transmitter characteristic scenarios\nReceiver characteristics scenarios\nPerformance requirement scenarios"
+      ],
+      [
+        "",
+        "3GPP TS 36.521-1",
+        "E-UTRA/NB-IoT/CatM1",
+        "UE Maximum Output Power Scenarios\nAdditional Spectrum Emission Mask Scenarios\nReference sensitivity level related Scenarios\nSpurious response related Scenarios"
+      ],
+      [
+        "",
+        "3GPP TS 38.521-1",
+        "5G NR/Red Cap",
+        "Transmitter & Receiver characteristics\nRF Transmitter & Receiver characteristics for carrier aggregation\nDemodulation performance requirements\nCSI reporting requirements\nDemodulation performance requirements for interworking"
+      ],
+      [
+        "",
+        "3GPP TS 38.521-3",
+        "5G NR",
+        "do"
+      ],
+      [
+        "",
+        "3GPP TS 38.521-4",
+        "5G NR/Red Cap",
+        "do"
+      ],
+      [
+        "RRM Conformance",
+        "3GPP TS 36.521-3",
+        "E-UTRA/NB-IoT",
+        "Cell re-selection intra frequency\nUE Transmit Timing Accuracy\nRadio Link Monitoring Test Scenarios (for both Out-of-Sync & In-Sync)"
+      ],
+      [
+        "",
+        "3GPP TS 38.533",
+        "5G NR/Red Cap",
+        "Radio Resource Management Testing\nEN-DC with all NR cells, NR standalone (state mobility,\nTiming, Signaling characteristics, Measurement\nprocedures, Measurement performance requirements)"
+      ],
+      [
+        "UICC Testing",
+        "3GPP TS 31.121",
+        "5G,4G,3G,2G,CAT M,WCDMA,NB-IoT",
+        "UE Identification Scenarios\nUE Prioritizing related Scenarios\nUICC interface related Scenarios\nSUCI calculation related Scenarios"
+      ],
+      [
+        "",
+        "3GPP TS 31.124",
+        "5G,4G,3G,2G,CAT M,WCDMA,NB-IoT",
+        "Multiple triggers: Steering of Roaming, IMSI Change, eCall mode updates, SMS-PP, etc.\nRAT-specific support: E-UTRAN, UTRAN/GERAN, NG-RAN\nFull-spectrum: Initialization, File Change, Full File Change, Session Reset"
+      ],
+      [
+        "",
+        "GSMA TS.35",
+        "IoT Device Connection Efficiency Test Book",
+        "Default RPM Parameters behavior\nRPM Activation Control\nRPM enablement during roaming\nRPM disabling via SIM OTA\nIndividual RPM requirement control via OTA\nRPM enable/disable flag validation\nRPM version verification"
+      ],
+      [
+        "",
+        "ETSI 102 695-1",
+        "Smart Cards; Test specification for the Host Controller Interface (HCI); Part 1: Terminal features",
+        "Host Controller Interface (HCI) Terminal Features\nTest Specifications for Smart Cards\nTerminal Feature Testing Procedures"
+      ],
+      [
+        "",
+        "ETSI 102 694-1",
+        "Smart Cards; Test specification for the Single Wire Protocol (SWP) interface; Part 1: Terminal features",
+        "Test cases for terminal features related to the Host Controller Interface (HCI).\nTest cases for terminal features related to the Single Wire Protocol (SWP) interface.\nSWP initial activation related Test Cases"
+      ],
+      [
+        "",
+        "ETSI 102 384",
+        "Smart Cards; UICC-Terminal interface; Card Application Toolkit (CAT) conformance specification",
+        "OPEN CHANNEL (UICC Server Mode: TCP in LISTEN state, successful; with modification)\nCLOSE CHANNEL (UICC Server Mode: TCP in LISTEN state, successful; to TCP in CLOSED state, successful)\nGET CHANNEL STATUS (UICC Server Mode: in LISTEN state, in ESTABLISHED state)\nACTIVATE SEQ 1.1\nContactless State Change"
+      ],
+      [
+        "",
+        "GSMA SGP.23-1",
+        "SGP.23-1 RSP Test specification for the Euicc",
+        "Initiate Authentication\nGet Bound Profile Package (BPP)\nAuthenticate Client\nHandle Notification\nCancel Session\nHTTPS Session"
+      ],
+      [
+        "",
+        "GSMA TS.27",
+        "Smart Cards;UICC-Terminal interface;Physical, electrical and logical test specification; Part 1: Terminal features",
+        "Electrical tests on contact\nSpeed Enhancement\nError correction/detection\nPhase preceding/during terminal/UICC Power ON/OFF"
+      ],
+      [
+        "",
+        "GSMA TS.35",
+        "NFC Handset Test Book",
+        "NFC Tag Interactions\nNFC Tag Performance Testing\nGlobalPlatform OMAPI Tests\nRouting in Multiple CEE model with eSE"
+      ],
+      [
+        "Data Performance",
+        "3GPP TR 37.901",
+        "E-UTRA",
+        "PDSCH (Downlink) Performance\nPUSCH (Uplink) Performance\nCarrier Aggregation (CA) & LAA Tests\nStress Testing"
+      ],
+      [
+        "",
+        "3GPP TR 37.901-5",
+        "5G NR",
+        "Radio Access Technology\nData Protocols\nDuplex Modes\nTransmission Directions\nChannel Conditions\nChannel Models\nRx Configurations\nPDSCH Mapping Type\nFrequency Ranges\nSplit Bearer Scenarios"
+      ],
+      [
+        "GCF Cellular Field Trials",
+        "GCF-CC Annex F 5.1",
+        "3GPP Cellular",
+        "Mobility performance related Test Scenarios\nSignaling related Test Scenarios\nUser-plane behavior under field conditions."
+      ],
+      [
+        "",
+        "GCF-CC Annex F 5.2",
+        "3GPP Cellular Field trials - IMS Field Trial Classifications",
+        "VoLTE related Test Scenarios\nViLTE related Test Scenarios\nVoWiFi related Test Scenarios\nIMS service behavior"
+      ],
+      [
+        "",
+        "GCF-CC Annex F 5.3",
+        "Application Enabler Interoperability Testing",
+        "Roaming Scenarios\nSupplementary Services\nEmergency Services\nData Services"
+      ],
+      [
+        "MCS",
+        "3GPP TS 36.579-2",
+        "Mission Critical Services",
+        "Configuration\nOn-network Group Calls\nOn-network Broadcast Calls\nOn-network Emergency Group Calls\nOn-network Imminent Peril Group Calls\nOn-network Emergency Alerts\nOn-network Functional Alias Calls\nOn-network Chat Group Calls\nOn-network Conference Events\nOn-network Group Selection and Changes\nOn-network Remotely Initiated Group Calls\nOn-network Private Calls\nOn-network Ambient Listening Calls\nOn-network First-to-Answer Calls\nOn-network Remotely Initiated Private Calls\nOn-network Location Services\nOn-network MBMS Services"
+      ]
+    ]
+  },
+  "3": {
+    "postId": "576",
+    "title": "Mobile Testing",
+    "data": [
+      [
+        "Service",
+        "Details"
+      ],
+      [
+        "KPI Testing",
+        "Performance analysis to validate device efficiency and reliability under various conditions."
+      ],
+      [
+        "Functional Testing",
+        "Verifying that the device performs its intended functions correctly in real-world scenarios."
+      ],
+      [
+        "Stability Testing",
+        "Ensuring device stability under prolonged usage and extreme conditions over extended periods."
+      ],
+      [
+        "Network Testing",
+        "Testing across 5G, 4G, 3G, IMS, VoWiFi, and interoperability scenarios with live networks."
+      ],
+      [
+        "Operator Testing",
+        "Carrier-specific validation to ensure network compatibility and acceptance on all major networks."
+      ],
+      [
+        "IoT & Smart Device Testing",
+        "Ensuring seamless connectivity and performance for smart devices and IoT products."
+      ],
+      [
+        "Certification",
+        "GCF, GMS certifications for global market readiness and regulatory compliance."
+      ],
+      [
+        "Compliance & Pre-Compliance",
+        "Ensuring regulatory compliance before and after product launch to all industry standards."
+      ],
+      [
+        "Consumer Trials",
+        "Real-world trials to gather user feedback before large-scale rollout and market launch."
+      ],
+      [
+        "Compatibility Testing",
+        "Validating device compatibility with networks, applications, and accessories across platforms."
+      ],
+      [
+        "Usability Testing",
+        "Assessing user experience, navigation, and overall ease of use with target demographics."
+      ],
+      [
+        "Security Testing",
+        "Identifying and mitigating vulnerabilities in mobile devices to ensure data protection."
+      ],
+      [
+        "Automation Testing",
+        "Accelerating testing with automated test scripts and frameworks for efficiency."
+      ]
+    ]
+  },
+  "4": {
+    "postId": "590",
+    "title": "Field Trial",
+    "data": [
+      [
+        "Testing Type",
+        "Details"
+      ],
+      [
+        "Network Testing",
+        "Call, Multi-RAB, Network Registration, H-VPLMN"
+      ],
+      [
+        "Data Performance Testing",
+        "Throughput, CA (3CA, 4CA), IPref, Ping, Data Stall"
+      ],
+      [
+        "Voice Testing",
+        "2G, CSFB, VoLTE, ViLTE, EPSFB, VoNR"
+      ],
+      [
+        "VoLTE Call Handover",
+        "FDD-TDD & TDD-FDD handover scenarios"
+      ],
+      [
+        "Cell Management",
+        "Cell Selection, Cell Reselection, Handover, IRAT Testing"
+      ],
+      [
+        "Stability Testing",
+        "Stress, Load, Endurance testing under real-world conditions"
+      ],
+      [
+        "Navigation Testing",
+        "GPS/Location Accuracy, Route Tracking verification"
+      ]
+    ]
+  }
+}
