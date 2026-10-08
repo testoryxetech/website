@@ -1,9 +1,5 @@
 # Testoryx Etech React site
 
-This is a standalone React/Vite rebuild of the published WordPress pages. The
-WordPress installation and backup remain outside this app and are not needed at
-runtime.
-
 ## Run locally
 
 ```sh
