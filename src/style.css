@@ -3600,6 +3600,20 @@ h1, h2, h3, h4, h5, h6 {
   .e-con.e-col > .e-con-inner {
     flex-wrap: nowrap;
   }
+
+  /* Sections and cards that sit side by side on desktop stack on phones;
+     keep at least a 20px gap so they never touch, even when the page set 0. */
+  .e-con:has(> .e-con),
+  .e-con-inner:has(> .e-con) {
+    row-gap: max(var(--row-gap), 20px);
+  }
+
+  /* Desktop spacing between side-by-side cards uses side margins; once they
+     stack full width those margins only make some cards narrower. */
+  .e-con .e-con {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -3996,4 +4010,28 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 0;
   background: none;
   box-shadow: none;
+}
+
+/* The About numbers band was designed to overlap the old template section's
+   empty bottom padding; after Global Coverage it would cover real content. */
+.page-canvas .coverage + .e-con.e-con {
+  --margin-top: clamp(40px, 6vw, 72px);
+}
+
+/* Equal-height icon-box cards: inside a column section the card grows to fill
+   it, and sections in a row already stretch to the tallest one. */
+.e-con.e-col > .elementor-widget-icon-box:last-child,
+.e-con.e-col > .e-con-inner > .elementor-widget-icon-box:last-child {
+  flex-grow: 1;
+}
+
+.elementor-widget-icon-box > .elementor-widget-container,
+.elementor-widget-icon-box .elementor-icon-box-wrapper {
+  height: 100%;
+}
+
+/* Rows of such cards (e.g. the home feature boxes) get breathing room. */
+.e-con:has(> .e-con > .elementor-widget-icon-box),
+.e-con-inner:has(> .e-con > .elementor-widget-icon-box) {
+  column-gap: max(var(--column-gap), 20px);
 }
