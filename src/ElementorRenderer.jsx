@@ -200,7 +200,7 @@ function SiteHero() {
       <div className="site-hero-copy">
         <span className="hero-eyebrow"><i aria-hidden="true" />Welcome to Testoryx Etech</span>
         <h1>
-          <span className="hero-line">2 years of experience</span>
+          <span className="hero-line">Years of experience</span>
           <span className="hero-line">in <em>chipset testing</em></span>
         </h1>
         <p>
